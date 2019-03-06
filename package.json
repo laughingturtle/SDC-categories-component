@@ -80,5 +80,8 @@
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
     "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^0.19.1"
   }
 }

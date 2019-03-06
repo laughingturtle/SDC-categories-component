@@ -9,11 +9,23 @@ const redis = require('redis');
 const db = require('../databaseNoSQL/db'); //mongo
 // const db = require('../databasePostgre/db'); //PostgreSQL
 const client = redis.createClient();
+const proxy = require('http-proxy-middleware')
+
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(`${__dirname}/../public`));
 app.use(responseTime());
+
+app.use(proxy('/recent-broadcasts', {
+  target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'
+}));
+app.use(proxy('/recent-highlights', {
+  target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'
+}));
+app.use(proxy('/popular-clips', {
+  target: 'http://ec2-13-56-139-244.us-west-1.compute.amazonaws.com:3000'
+}));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // mongo
