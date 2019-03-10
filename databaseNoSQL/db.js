@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
   Admin = mongoose.mongo.Admin;
 
 // const mongoDB = 'mongodb://127.0.0.1/categories_db';
-const mongoDB = 'mongodb://localhost:127.0.0.1/categories_db';
+const mongoDB = 'mongodb://ec2-54-183-98-71.us-west-1.compute.amazonaws.com:27017/categories_db';
 mongoose.connect(mongoDB, {
   useNewUrlParser: true
 });

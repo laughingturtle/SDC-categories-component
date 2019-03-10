@@ -9,11 +9,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['SDC category component'],
+  app_name: ['SDC AWS'],
   /**
    * Your New Relic license key.
    */
-  license_key: 'Add key',
+  license_key: '',
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
